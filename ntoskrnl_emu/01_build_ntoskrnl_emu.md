@@ -1,3 +1,5 @@
+[<< Back to home directory](..)
+
 # Step 1: Building and Installing NTOSKRNL\_Emu
 This is the very first step, before you do anything. You need to build the files **ntoskrn8.sys** and **storpor8.sys**. These files will be collectively referred to as the **Emu dependencies**.
 
