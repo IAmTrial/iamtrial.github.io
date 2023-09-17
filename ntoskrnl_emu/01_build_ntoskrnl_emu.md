@@ -8,11 +8,11 @@ As part of any driver backporting process, you may need to redirect the drivers 
 There should be two files built by system: **ntoskrn8.sys** and **storpor8.sys**.
 
 ## Requirements
+- Any Windows system that can run the Windows 7 DDK
 - [Windows 7 DDK v7.1.0](https://www.microsoft.com/en-us/download/details.aspx?id=11800) ([download](https://download.microsoft.com/download/4/A/2/4A25C7D5-EFBE-4182-B6A9-AE6850409A78/GRMWDK_EN_7600_1.ISO))
 - ISO mounting capabilities
     - Windows 7 and older requires a program such as [WinCDEmu](https://wincdemu.sysprogs.org/download/).
     - Windows 8 and newer can mount ISO files by double-clicking.
-- Any Windows system that can run the Windows 7 DDK
 
 ## Instructions
 
@@ -24,13 +24,14 @@ Note that this does not need to be installed on the system that is designated to
 1. Download the Windows 7 DDK v7.1.0 ISO file. This file is named **GRMWDK_EN_7600_1.ISO** on your system.
 2. Mount **GRMWDK_EN_7600_1.ISO**.
 3. Run **KitSetup.exe**.
-4. Check **Build Environments** and click OK to install. Anything else is extra.
+4. Check **Build Environments** and click OK and install to the default directory. Anything else is extra.
+![Install Build Environments](01_build_ntoskrnl_emu/wddk_install.png)
 
 ### Fix Windows 7 DDK headers
 The original header files will prevent the **Emu dependencies** from being built correctly. You will need to fix these header files manually.
 
 1. Open up `C:\WinDDK\7600.16385.1\inc\ddk\ntddk.h` with a text editor, such as Notepad.
-2. Find the following lines:
+2. Search for `typedef ULONG NODE_REQUIREMENT`. This will find the following lines:
 ```c
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 typedef ULONG NODE_REQUIREMENT;
@@ -47,10 +48,13 @@ typedef ULONG NODE_REQUIREMENT;
 1. Go to [GeorgeK1ng's NTOSKRNL\_Emu repository](https://github.com/GeorgeK1ng/NTOSKRNL_Emu). The files from **MovAX0xDEAD**'s original repository are missing some features that have been implemented in GeorgeK1ng's version.
 2. There is a green button labeled **Code**. Click it for a dropdown menu.
 3. Click the entry labeled **Download ZIP**.
+![Download the code](01_build_ntoskrnl_emu/download_code.png)
 4. Extract the files from that ZIP file.
+![Extract the files](01_build_ntoskrnl_emu/extract_files.png)
 
 ### Build NTOSKRNL\_Emu
 1. Open up **File Explorer** on Windows. Navigate to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Driver Kits\WDK 7600.16385.1\Build Environments`.
+![The build environments](01_build_ntoskrnl_emu/build_environments.png)
 2. Select the folder that matches the OS of the system that will install backported drivers.
     - Windows 7
     - Windows Server 2003
@@ -66,6 +70,7 @@ typedef ULONG NODE_REQUIREMENT;
         - For 32-bit Windows systems.
 4. Navigate to the folder where the files of the ZIP were extracted.
 5. Type `bld`. Hit Enter.
+![Navigation to the extracted files directory and bld command](01_build_ntoskrnl_emu/bld.png)
 6. Once the build has completed, enter the **ntoskrn8** folder.
 7. Inside, there will be a folder starting with the name **objfre_**.
     - The second part will be the name of the target system.
@@ -75,7 +80,9 @@ typedef ULONG NODE_REQUIREMENT;
     - The third part will be the CPU architecture of the target system.
 8. Enter the folder and the folder inside.
 9. Locate a file named **ntoskrn8.sys**. Move it to a more convenient place.
+![ntoskrn8.sys](01_build_ntoskrnl_emu/ntoskrn8_sys.png)
 10. Repeat steps 6 to 9, but for the **storpor8** folder and the **storpor8.sys** file.
+![storpor8.sys](01_build_ntoskrnl_emu/storpor8_sys.png)
 
 ### Install NTOSKRNL\_Emu
 The files will need to be installed manually before any backported driver can be installed.
@@ -83,3 +90,4 @@ The files will need to be installed manually before any backported driver can be
 1. Locate **ntoskrn8.sys**. Transfer this file to somewhere accessible to the target system, such as a flash drive or a network-accessible folder.
 2. In your target system, move the file into the folder at `C:\Windows\system32\drivers`.
 3. Repeat steps 1 and 2 for **storpor8.sys**.
+![Install ntoskrn8.sys and storpor8.sys](01_build_ntoskrnl_emu/system32_drivers.png)
