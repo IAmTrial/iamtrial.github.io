@@ -26,6 +26,26 @@ Note that this does not need to be installed on the system that is designated to
 3. **Run KitSetup.exe**.
 4. Check **Build Environments** and click OK to install. Anything else is extra.
 
+### Fix Windows 7 DDK headers
+The original header files will prevent the **Emu dependencies** from being built correctly. You will need to fix these header files manually.
+
+1. Open up `C:\WinDDK\7600.16385.1\inc\ddk\ntddk.h` with a text editor, such as Notepad.
+2. Find the following lines:
+
+```c
+#if (NTDDI_VERSION >= NTDDI_WIN2K)
+typedef ULONG NODE_REQUIREMENT;
+```
+
+3. Replace the lines with:
+
+```c
+#if (NTDDI_VERSION >= NTDDI_VISTA)
+typedef ULONG NODE_REQUIREMENT;
+```
+
+4. Repeat, but for `C:\WinDDK\7600.16385.1\inc\ddk\wdm.h`.
+
 ### Download NTSOKRNL\_Emu's code
 
 1. Go to [GeorgeK1ng's NTOSKRNL\_Emu repository](https://github.com/GeorgeK1ng/NTOSKRNL_Emu). The files from **MovAX0xDEAD**'s original repository are missing some features that have been implemented in GeorgeK1ng's version.
