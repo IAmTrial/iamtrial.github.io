@@ -1,7 +1,7 @@
 # Step 1: Building NTOSKRNL\_Emu
 This is the very first step, before you do anything. You need to build the files **ntoskrn8.sys** and **storpor8.sys**. These files will be collectively referred to as the **Emu dependencies**.
 
-Drivers written for newer Windows system are dependent on certain features that are only available in those newer versions of Windows. If you attempt to install the unmodified drivers in older versions of Windows, the driver may fail to install, because the new features are not available. The driver effectively needs to be backported. 
+Drivers written for newer Windows systems are dependent on certain features that are only available in those newer versions of Windows. If you attempt to install the unmodified drivers in older versions of Windows, the driver may fail to install, because the new features are not available. The driver effectively needs to be backported. 
 As part of any driver backporting process, you may need to redirect the drivers from the system's default **ntoskrnl.exe** and **storport.sys** to the **Emu dependencies**. By redirecting the affected drivers to **ntoskrn8.sys** and/or **storpor8.sys**, you cause the driver think that the new features are available on an older version of Windows.
 
 ## Goal
