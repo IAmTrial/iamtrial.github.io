@@ -1,4 +1,4 @@
-# Step 1: Building NTOSKRNL\_Emu
+# Step 1: Building and Installing NTOSKRNL\_Emu
 This is the very first step, before you do anything. You need to build the files **ntoskrn8.sys** and **storpor8.sys**. These files will be collectively referred to as the **Emu dependencies**.
 
 Drivers written for newer Windows systems are dependent on certain features that are only available in those newer versions of Windows. If you attempt to install the unmodified drivers in older versions of Windows, the driver may fail to install, because the new features are not available. The driver effectively needs to be backported. 
@@ -60,3 +60,10 @@ Note that this does not need to be installed on the system that is designated to
 8. Enter the folder and the folder inside.
 9. Locate a file named **ntoskrn8.sys**. Move it to a more convenient place.
 10. Repeat steps 6 to 9, but for the **storpor8** folder and the **storpor8.sys** file.
+
+### Install NTOSKRNL\_Emu
+The files will need to be installed manually before any backported driver can be installed.
+
+1. Locate **ntoskrn8.sys**. Transfer this file to somewhere accessible to the target system, such as a flash drive or a network-accessible folder.
+2. In your target system, move the file into the folder at `C:\Windows\system32\drivers`.
+3. Repeat steps 1 and 2 for **storpor8.sys**.
