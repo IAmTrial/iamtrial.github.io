@@ -10,8 +10,8 @@ There should be two files built by system: **ntoskrn8.sys** and **storpor8.sys**
 ## Requirements
 - [Windows 7 DDK v7.1.0](https://www.microsoft.com/en-us/download/details.aspx?id=11800) ([download](https://download.microsoft.com/download/4/A/2/4A25C7D5-EFBE-4182-B6A9-AE6850409A78/GRMWDK_EN_7600_1.ISO))
 - ISO mounting capabilities
-  - Windows 7 and older requires a program such as [WinCDEmu](https://wincdemu.sysprogs.org/download/).
-  - Windows 8 and newer can mount ISO files by double-clicking.
+    - Windows 7 and older requires a program such as [WinCDEmu](https://wincdemu.sysprogs.org/download/).
+    - Windows 8 and newer can mount ISO files by double-clicking.
 - Any Windows system that can run the Windows 7 DDK
 
 ## Instructions
@@ -52,27 +52,27 @@ typedef ULONG NODE_REQUIREMENT;
 ### Build NTOSKRNL\_Emu
 1. Open up **File Explorer** on Windows. Navigate to `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Windows Driver Kits\WDK 7600.16385.1\Build Environments`.
 2. Select the folder that matches the OS of the system that will install backported drivers.
-  - Windows 7
-  - Windows Server 2003
-    - This includes Windows XP Professional x64 Edition, because it is based on the same code as Windows Server 2003
-  - Windows Vista and Windows Server 2008
-  - Windows XP
+    - Windows 7
+    - Windows Server 2003
+        - This includes Windows XP Professional x64 Edition, because it is based on the same code as Windows Server 2003
+    - Windows Vista and Windows Server 2008
+    - Windows XP
 3. Open up the **Free Build Environment** that matches the target system. Do not choose the **Checked Build Environment**! **Checked Build Environment** will build the **Emu dependencies** in debug mode, making them slower, and likely won't run on systems without the Driver Development Kit installed.
-  - ia64
-    - Only for systems running the very rare Intel Itanium CPU architecture. For 64-bit, you probably want x64.
-  - x64
-    - For 64-bit Windows systems.
-  - x86
-    - For 32-bit Windows systems.
+    - ia64
+        - Only for systems running the very rare Intel Itanium CPU architecture. For 64-bit, you probably want x64.
+    - x64
+        - For 64-bit Windows systems.
+    - x86
+        - For 32-bit Windows systems.
 4. Navigate to the folder where the files of the ZIP were extracted.
 5. Type `bld`. Hit Enter.
 6. Once the build has completed, enter the **ntoskrn8** folder.
 7. Inside, there will be a folder starting with the name **objfre_**.
-  - The second part will be the name of the target system.
-    - win7 = Windows 7
-    - wnet = Windows 2003
-    - wxp = Windows XP
-  - The third part will be the CPU architecture of the target system.
+    - The second part will be the name of the target system.
+        - win7 = Windows 7
+        - wnet = Windows 2003
+        - wxp = Windows XP
+    - The third part will be the CPU architecture of the target system.
 8. Enter the folder and the folder inside.
 9. Locate a file named **ntoskrn8.sys**. Move it to a more convenient place.
 10. Repeat steps 6 to 9, but for the **storpor8** folder and the **storpor8.sys** file.
