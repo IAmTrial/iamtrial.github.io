@@ -31,19 +31,15 @@ The original header files will prevent the **Emu dependencies** from being built
 
 1. Open up `C:\WinDDK\7600.16385.1\inc\ddk\ntddk.h` with a text editor, such as Notepad.
 2. Find the following lines:
-
 ```c
 #if (NTDDI_VERSION >= NTDDI_WIN2K)
 typedef ULONG NODE_REQUIREMENT;
 ```
-
 3. Replace the lines with:
-
 ```c
 #if (NTDDI_VERSION >= NTDDI_VISTA)
 typedef ULONG NODE_REQUIREMENT;
 ```
-
 4. Repeat, but for `C:\WinDDK\7600.16385.1\inc\ddk\wdm.h`.
 
 ### Download NTSOKRNL\_Emu's code
