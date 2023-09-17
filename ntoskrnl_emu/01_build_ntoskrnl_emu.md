@@ -23,7 +23,7 @@ Note that this does not need to be installed on the system that is designated to
 
 1. Download the Windows 7 DDK v7.1.0 ISO file. This file is named **GRMWDK_EN_7600_1.ISO** on your system.
 2. Mount **GRMWDK_EN_7600_1.ISO**.
-3. **Run KitSetup.exe**.
+3. Run **KitSetup.exe**.
 4. Check **Build Environments** and click OK to install. Anything else is extra.
 
 ### Fix Windows 7 DDK headers
