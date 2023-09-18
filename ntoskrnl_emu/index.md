@@ -16,3 +16,4 @@ Aside from what has already been stated, the project is extremely useful for any
 > I am not responsible for any damages.
 
 1. [Building and Installing NTOSKRNL\_Emu](01_build_ntoskrnl_emu.md)
+2. [Using CFF Explorer](02_cff_explorer.md)
