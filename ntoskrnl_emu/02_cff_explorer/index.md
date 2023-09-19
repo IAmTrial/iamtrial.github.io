@@ -1,4 +1,4 @@
-[<< Back to home directory](index.md)
+[<< Back to home directory](../index.md)
 
 # Step 2: Using CFF Explorer
 The right tools are needed to backport drivers.
@@ -32,7 +32,7 @@ A driver, by default, will rely on specific files in the `C:\Windows\system32\dr
     - Note that the file name cannot be longer than the name that already exists for the file.
 4. Save the driver.
 
-![Modify the import directory](02_cff_explorer/modify_import_directory.png)
+![Modify the import directory](assets/modify_import_directory.png)
 
 ### Hex editing
 Hex editing is required in some cases, such as replacing the security cookie in Windows 8 drivers, or rewriting incompatible code.
@@ -40,17 +40,17 @@ Hex editing is required in some cases, such as replacing the security cookie in 
 #### Find menu
 1. Select **Hex Editor**.
 2. Click the magnifying glass icon to open the **Find** menu.
-![Open the Find menu](02_cff_explorer/hex_editor_find_menu.png)
+![Open the Find menu](assets/hex_editor_find_menu.png)
     - Do not use **CTRL+F**, as it will not open the menu.
 3. Provide input for either **String** or **Hex**.
     - **Hex** input cannot have space separators.
 4. If not already at the top of the file, make sure to scroll all the way to the top and click the first entry to set the cursor to the start of the driver.
-![Set the Find starting point](02_cff_explorer/hex_editor_find_start.png)
+![Set the Find starting point](assets/hex_editor_find_start.png)
     - If this is not done, then **Find** will look for the first match **after** the position of the cursor.
 5. Click the **Find** button that matches the same row as the input.
-![Click Find for the first find result](02_cff_explorer/hex_editor_find_first.png)
+![Click Find for the first find result](assets/hex_editor_find_first.png)
 6. Click **Find** again to look for the next match.
-![Click Find for the next find result](02_cff_explorer/hex_editor_find_second.png)
+![Click Find for the next find result](assets/hex_editor_find_second.png)
 
 #### Rewrite bytes
 > [!Note]
@@ -59,7 +59,7 @@ Hex editing is required in some cases, such as replacing the security cookie in 
 1. Click to set the cursor at the start of the bytes to be rewritten, to the right of the **Offset** column.
 2. Enter hexadecimal values.
 3. Save the driver.
-![Rewrite bytes](02_cff_explorer/hex_editor_rewrite_bytes.png)
+![Rewrite bytes](assets/hex_editor_rewrite_bytes.png)
 
 #### Rewrite string
 > [!Note]
@@ -68,7 +68,7 @@ Hex editing is required in some cases, such as replacing the security cookie in 
 1. Click to set the cursor at the start of the bytes to be rewritten, in the **Ascii** column.
 2. Enter text values. If the 00 ending byte is overwritten, it needs to be appended to the text.
 3. Save the driver.
-![Rewrite string](02_cff_explorer/hex_editor_rewrite_string.png)
+![Rewrite string](assets/hex_editor_rewrite_string.png)
 
 > [!Note]
 > To rewrite Unicode string, you will need to modify every other character. For example, `p.r.o.g.r.a.m.` would need to be written as `t.h.i.n.g.i.e.`.
@@ -80,4 +80,4 @@ Whenever a driver is changed, the checksum will need to be recalculated. CFF Exp
 2. Check the option to **Update Checksum**.
 3. Click **Rebuild**.
 4. Save the driver.
-![Recalculate the checksum](02_cff_explorer/update_checksum.png)
+![Recalculate the checksum](assets/update_checksum.png)
