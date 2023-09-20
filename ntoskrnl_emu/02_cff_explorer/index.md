@@ -1,6 +1,11 @@
-[<< Back to home directory](../index.md)
+---
+layout: page
+title: >
+    Step 2: Using CFF Explorer
+exclude: true
+permalink: /ntoskrnl_emu/02_cff_explorer/
+---
 
-# Step 2: Using CFF Explorer
 The right tools are needed to backport drivers.
 
 In order to backport drivers, you will need at minimum a hex editor and a program to recalculate the checksums of the drivers. CFF Explorer can act as both.

@@ -1,4 +1,9 @@
-# NTOSKRNL\_Emu Guide
+---
+layout: page
+title: NTOSKRNL_Emu Guide
+permalink: /ntoskrnl_emu/
+---
+
 A guide on how to use NTOSKRNL\_Emu project for your own system.
 
 ## Background

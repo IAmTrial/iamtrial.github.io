@@ -1,6 +1,11 @@
-[<< Back to home directory](../index.md)
+---
+layout: page
+title: >
+    Step 3: Porting Win 7's WDF 1.11 to Win XP/2003
+exclude: true
+permalink: /ntoskrnl_emu/03_wdf_1_11/
+---
 
-# Step 3: Porting Win 7's WDF 1.11 to Win XP/2003
 Some drivers in Windows 7 and 8 require WDF 1.11, which is not available in Windows XP. The latest verison of WDF that supports Windows XP is 1.9. By applying some changes, the system modules will be usable in Windows XP, therefore improving the success of backporting drivers.
 
 If the system is newer than Windows XP or Server 2003, then skip this step.
