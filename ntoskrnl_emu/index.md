@@ -23,3 +23,4 @@ Aside from what has already been stated, the project is extremely useful for any
 1. [Building and Installing NTOSKRNL\_Emu](01_build_ntoskrnl_emu/index.md)
 2. [Using CFF Explorer](02_cff_explorer/index.md)
 3. [Porting Win 7's WDF 1.11](03_wdf_1_11/index.md)
+4. [Porting ksecdd.sys](04_ksecd8_sys/index.md)
