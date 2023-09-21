@@ -1,20 +1,19 @@
 ---
 layout: page
 title: >
-    Step 3: Porting Win 7's WDF 1.11 to Win XP/2003
+    Step 3: Porting Win 7's WDF 1.11
 exclude: true
 permalink: /ntoskrnl_emu/03_wdf_1_11/
 ---
 
 Some drivers in Windows 7 and 8 require WDF 1.11, which is not available in Windows XP. The latest verison of WDF that supports Windows XP is 1.9. By applying some changes, the system modules will be usable in Windows XP, therefore improving the success of backporting drivers.
 
-If the system is newer than Windows XP or Server 2003, then skip this step.
-
 ## Goal
 There should be two new files installed in the target system: **wdfld8.sys** and **wdf01_w8.sys**. Both files will be backported to Windows XP/2003.
 
 ## Requirements
 - Windows 7 or newer ([expand command is bugged in older versions](https://ss64.com/nt/expand.html))
+- [CFF Explorer](../02_cff_explorer/index.md)
 
 ## Instructions
 
@@ -59,7 +58,7 @@ As a side effect, all backported drivers that depend on any of the two WDF 1.11 
 1. In **Import Directory**:
     - Change the entry for **ntoskrnl.exe** to **ntoskrn8.sys**.
     - Change the entry for **wdfldr.sys** to **wdfld8.sys**.
-![Replace wdf01_w8 import directory](assets/wdf01_w8_import_directory.png)
+![Replace wdf01_w8.sys import directory](assets/wdf01_w8_import_directory.png)
 2. In **Rebuilder**, recalculate the checksum.
 3. Save the file.
 

@@ -4,7 +4,7 @@ title: NTOSKRNL_Emu Guide
 permalink: /ntoskrnl_emu/
 ---
 
-A guide on how to use NTOSKRNL\_Emu project for your own system.
+A guide on how to use NTOSKRNL\_Emu project for your own Windows XP or Windows Server 2003 system.
 
 ## Background
 NTOSKRNL\_Emu is a project that adds missing library functions for ntoskrnl.exe and storport.sys. This enables drivers designed for newer versions of Windows to be backported to as far back as Windows XP. This includes some of the generic drivers written by Microsoft, but can also apply to drivers from computer manufacturers.
@@ -22,4 +22,4 @@ Aside from what has already been stated, the project is extremely useful for any
 
 1. [Building and Installing NTOSKRNL\_Emu](01_build_ntoskrnl_emu/index.md)
 2. [Using CFF Explorer](02_cff_explorer/index.md)
-3. (XP/2003 only) [Porting Win 7's WDF 1.11 to Win XP/2003](03_wdf_1_11/index.md)
+3. [Porting Win 7's WDF 1.11](03_wdf_1_11/index.md)
