@@ -76,7 +76,7 @@ As a side effect, all backported drivers that depend on any of the two WDF 1.11 
     - 32-bit: `F6 EB 1B F6`
     ![Replace x86 wdfld8.sys hex values](assets/wdfld8_x86_hex_replace.png)
     - 64-bit: `85 FF EB 2A`
-    ![Replace x86 wdfld8.sys hex values](assets/wdfld8_x64_hex_replace.png)
+    ![Replace x64 wdfld8.sys hex values](assets/wdfld8_x64_hex_replace.png)
 5. In **Rebuilder**, recalculate the checksum.
 6. Save the file.
 

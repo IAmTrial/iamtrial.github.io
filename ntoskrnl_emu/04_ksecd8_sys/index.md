@@ -34,7 +34,7 @@ The original file will need to be extracted from the ISO file using 7-Zip.
 ### Rename
 Windows already has its own version of **ksecdd.sys**, so the file needs to be renamed to prevent name collision.
 
-As a side effect, all backported drivers that depend on **ksecdd.sys** will also need to have the import tables modified to reflect the new names.
+As a side effect, all backported drivers that depend on **ksecdd.sys** will also need to have the import tables modified to reflect the new name.
 
 1. Rename **ksecdd.sys** to **ksecd8.sys**.
 ![Rename files](assets/renamed_file.png)
