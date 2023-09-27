@@ -26,3 +26,6 @@ Aside from what has already been stated, the project is extremely useful for any
 3. [Porting Win 7's WDF 1.11](03_wdf_1_11/index.md)
 4. [Porting ksecdd.sys](04_ksecd8_sys/index.md)
 5. [Porting WppRecorder.sys](05_wpprecorde8_sys/index.md)
+
+### Drivers backport
+- [Windows 8's USB 3](win8_usb3/index.md)
